@@ -1,5 +1,6 @@
 # Uncomment this line to define a global platform for your project
-# platform :ios, '11.0'
+#platform :ios, '11.0'
+#platform :ios, '10.0'
 
 # CocoaPods analytics sends network stats synchronously affecting flutter build latency.
 ENV['COCOAPODS_DISABLE_STATS'] = 'true'
@@ -31,8 +32,9 @@ target 'Runner' do
   use_frameworks!
   use_modular_headers!
 
-  #pod 'FirebaseFirestore', :git => 'https://github.com/invertase/firestore-ios-sdk-frameworks.git', :tag => '10.10.0'
-
+  pod 'FirebaseFirestore/WithLeveldb', :git => 'https://github.com/invertase/firestore-ios-sdk-frameworks.git', :tag => '10.10.0'
+  #上の修正は、https://stackoverflow.com/questions/74879685/xcode-undefined-symbol-leveldbwritebatchputleveldbslice-const-level/74883912#74883912?newreg=206a69f7d9ce43699702d64a11db7ae7を参考にした
+  #pod 'FirebaseFirestore'
 
   flutter_install_all_ios_pods File.dirname(File.realpath(__FILE__))
   target 'RunnerTests' do
